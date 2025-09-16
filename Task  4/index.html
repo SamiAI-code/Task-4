@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>task 4</title>
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #ffffff;
+      --card: #c92b2b; 
+      --muted: rgba(255,255,255,0.85);
+      --accent: #111;
+      --radius: 18px;
+      --max-width: 1200px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      justify-content:center;
+      padding:40px 20px;
+    }
+
+    
+    .page{
+      width:100%;
+      max-width:var(--max-width);
+      position:relative;
+    }
+
+    
+    nav{
+      display:flex;
+      gap:28px;
+      align-items:center;
+      padding:8px 10px;
+      margin-bottom:18px;
+    }
+    nav a{
+      color:#666;
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+    }
+    nav a:first-child{ color:#111; } 
+
+    
+    .hero{
+      position:relative;
+      background:transparent;
+      padding:30px;
+      min-height:480px;
+    }
+
+    
+    .hero__card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:52px 48px;
+      color:var(--muted);
+      position:relative;
+      overflow:visible;
+      display:flex;
+      gap:32px;
+      align-items:flex-start;
+      
+      padding-right: 360px;
+    }
+
+   
+    .hero__content{
+      max-width:58%;
+    }
+    .hero__title{
+      margin:0 0 18px 0;
+      font-size:64px;
+      line-height:0.95;
+      letter-spacing:2px;
+      color:#fff;
+      font-weight:800;
+    }
+    .hero__subtitle{
+      margin:0 0 18px 0;
+      color: rgba(255,255,255,0.9);
+      font-weight:300;
+      font-size:14.5px;
+      line-height:1.6;
+      max-width:70ch;
+    }
+
+    .hero__btn{
+      display:inline-block;
+      background:#fff;
+      color:#111;
+      padding:12px 20px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      margin-top:10px;
+    }
+
+    
+    .heart{
+      position:absolute;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.95);
+      display:grid;
+      place-items:center;
+      box-shadow:0 8px 18px rgba(0,0,0,0.08);
+    }
+    .heart svg{ width:28px; height:28px; display:block; }
+
+    .heart--top{ right:170px; top:42px; }
+    .heart--mid{ right:140px; top:220px; transform:scale(1.05); }
+    
+    .hero__image-wrap{
+      position:absolute;
+      right:18px;
+      top:0;
+      bottom:0;
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      pointer-events:none;
+    }
+    .hero__image{
+      width:360px;
+      max-width:38%;
+      height:auto;
+      transform:translateY(10px);
+      pointer-events:auto;
+      user-select:none;
+      border-radius:6px;
+      filter:drop-shadow(0 18px 30px rgba(0,0,0,0.18));
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    }
+
+    
+    .scroll{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:18px;
+      color:#777;
+      font-weight:600;
+      font-size:14px;
+    }
+    .scroll .circle{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      border:2px solid #ddd;
+      display:grid;
+      place-items:center;
+    }
+
+    @media (max-width:1000px){
+      .hero__card{ padding-right:260px; padding-left:36px; }
+      .hero__title{ font-size:54px; }
+      .hero__image{ width:300px; max-width:40%; }
+      .heart--top{ right:130px; }
+      .heart--mid{ right:110px; top:200px; }
+    }
+
+    @media (max-width:820px){
+      nav{ gap:12px; }
+      .hero__card{
+        padding-right:28px;
+        padding-left:28px;
+        flex-direction:column;
+        padding-bottom:70px;
+      }
+      .hero__content{ max-width:100%; }
+      .hero__title{ font-size:40px; margin-bottom:10px; }
+      .hero__subtitle{ font-size:14px; }
+      .hero__image-wrap{
+        position:relative;
+        right:auto;
+        top:auto;
+        justify-content:center;
+        margin-top:22px;
+      }
+      .hero__image{ width:240px; max-width:100%; transform:none; }
+      .heart{ display:none; } 
+    }
+
+    @media (max-width:420px){
+      .hero__title{ font-size:30px; }
+      .hero__subtitle{ font-size:13px; }
+      body{ padding:20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page" role="main">
+    <nav aria-label="Primary">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Character</a>
+      <a href="#">Blog</a>
+    </nav>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__card">
+        <div class="hero__content">
+          <h1 id="hero-heading" class="hero__title">KAGUYA<br>SHINOMIYA.</h1>
+
+          <p class="hero__subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+
+          <a class="hero__btn" href="#more">Read More</a>
+
+          <div class="scroll" style="margin-top:28px;">
+            <div class="circle" aria-hidden="true">↓</div>
+            <div>Scroll Down</div>
+          </div>
+        </div>
+
+        
+        <div class="heart heart--top" aria-hidden="true">
+         
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 20s-7-4.6-9-7.2C0.8 9.2 3 6 6 6c1.7 0 3.1 1 4 2.4C11.9 7 13.3 6 15 6c3 0 5.2 3.2 3 6.8C19 15.4 12 20 12 20z" fill="#c92b2b"/>
+          </svg>
+        </div>
+
+        <div class="heart heart--mid" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 20s-7-4.6-9-7.2C0.8 9.2 3 6 6 6c1.7 0 3.1 1 4 2.4C11.9 7 13.3 6 15 6c3 0 5.2 3.2 3 6.8C19 15.4 12 20 12 20z" fill="#c92b2b"/>
+          </svg>
+        </div>
+
+        
+        <div class="hero__image-wrap" aria-hidden="false">
+          
+          <img src="freepik__background__68009.png" height="500px" alt="Character illustration (replace with your image)">
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
